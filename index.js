@@ -2,6 +2,7 @@
 // All API Tests
 // This program using selenium along with gecko driver to validate that 
 // All the API's that delta comms host are visible through ingress
+// Please note this Test Run is for the QA environment and the staging environment will need a different set of tests.
 
 
 const webdriver = require('selenium-webdriver'),
@@ -21,10 +22,10 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for comms-device-registry is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - comms-device-registry failed to load.");
             }
         });
     });
@@ -41,10 +42,10 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for comms-device-registry-old is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - comms-device-registry-old web pagefailed to load.");
             }
         });
     });
@@ -62,10 +63,10 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for comms-device-provisioning-service is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - comms-device-provisioning-service web page failed to load.");
             }
         });
     });
@@ -81,15 +82,15 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for comms-device-provisioning-service-old is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - comms-device-provisioning-service-old web page failed to load.");
             }
         });
     });
 
-    //delta-comms-transmit-service
+    // delta-comms-transmit-service
     driver.sleep(125000).then (function() {
         driver.get('https://delta-comms-transmit-service.qa.platform.connectedfleet.io/#!/device-command-controller');
     });
@@ -100,15 +101,15 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for delta-comms-transmit-service is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - delta-comms-transmit-service web page failed to load.");
             }
         });
     });
 
-    //device-import-service
+    // device-import-service
     driver.sleep(155000).then (function() {
         driver.get('https://device-import-service.qa.platform.connectedfleet.io/');
     });
@@ -119,10 +120,33 @@ const driver = new webdriver.Builder()
             let expectedTitle = "Swagger UI"
 
             if(expectedTitle === title){
-                console.log("Verification Successful - The correct title is displayed on the web page.");
+                console.log("Verification Successful - Web page for device-import-service is displayed.");
             }
             else{
-                console.log("Verification Failed - An incorrect title is displayed on the web page.");
+                console.log("Verification Failed - device-import-service web page failed to load.");
             }
         });
     });
+
+
+    driver.sleep(190000).then (function() {
+        driver.close();
+        console.log("All tests complete, please view console for results")
+    });    
+
+    // below code is not working
+    /*driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
+
+    driver.sleep(15000).then (function() {
+        driver.getCurrentUrl().then(function(URL) {
+
+            let expectedUrl = "https://comms-device-registry.qa.platform.connectedfleet.io"
+
+            if(expectedUrl === URL){
+                console.log("Verification Successful - Web page for comms-device-registry is displayed.");
+            }
+            else{
+                console.log("Verification Failed - comms-device-registry failed to load.");
+            }
+        });
+    });*/
