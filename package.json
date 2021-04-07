@@ -1,0 +1,22 @@
+{
+  "name": "allapitest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SethWorkPeepsNet/allapitest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SethWorkPeepsNet/allapitest/issues"
+  },
+  "homepage": "https://github.com/SethWorkPeepsNet/allapitest#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-beta.2"
+  }
+}
