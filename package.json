@@ -18,5 +18,8 @@
   "homepage": "https://github.com/SethWorkPeepsNet/allapitest#readme",
   "dependencies": {
     "selenium-webdriver": "^4.0.0-beta.2"
+  },
+  "devDependencies": {
+    "lint": "^0.7.0"
   }
 }

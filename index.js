@@ -13,9 +13,24 @@ const driver = new webdriver.Builder()
     .build();
 
     
-    // comms-device-registry
-    driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
 
+    // will improve syntax to 
+    /*driver.getTitle()
+		.then((title) => console.log(title == "Swagger UI" ?
+				"Verification Successful - Web page for delta-comms-transmit-service is displayed."
+				: "Verification Failed - delta-comms-transmit-service web page failed to load."));*/
+
+   
+    
+    
+
+                
+
+                  
+    // comms-device-registry
+  
+    
+    driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
     driver.sleep(15000).then (function() {
         driver.getTitle().then(function(title) {
 
