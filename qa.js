@@ -5,7 +5,7 @@
 // Please note this Test Run is for the QA environment and the staging environment will need a different set of tests.
 
 
-/*const webdriver = require('selenium-webdriver'),
+const webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
 const driver = new webdriver.Builder()
@@ -30,7 +30,7 @@ const driver = new webdriver.Builder()
     // comms-device-registry
   
     
-    /*driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
+    driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
     driver.sleep(15000).then (function() {
         driver.getTitle().then(function(title) {
 
@@ -152,7 +152,7 @@ const driver = new webdriver.Builder()
 
     
 
-    /*driver.sleep(190000).then (function() {
+    driver.sleep(190000).then (function() {
         driver.close();
         console.log("All tests complete, please view console for results")
     });    

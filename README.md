@@ -5,4 +5,6 @@ in the QA environment, other automated tests will have to be written for staging
 
 After all the proper node modules have been downloaded, you will also need the gecko driver for selenium javascript.
 
-Tests will start when from the directory "node index.js" is typed.
+Tests will start when from the directory "node qa.js" is typed for testing the QA environment and "staging.js" is typed for testing staging environment.
+
+"Index.js" currently does nothing
