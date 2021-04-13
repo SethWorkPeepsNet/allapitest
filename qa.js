@@ -14,23 +14,64 @@ const driver = new webdriver.Builder()
 
     
 
-    // will improve syntax to 
-    /*driver.getTitle()
-		.then((title) => console.log(title == "Swagger UI" ?
-				"Verification Successful - Web page for delta-comms-transmit-service is displayed."
-				: "Verification Failed - delta-comms-transmit-service web page failed to load."));*/
+  (async function(){
 
-   
-    
-    
+        // Apply timeout for 10 seconds
+            await driver.manage().setTimeouts( { implicit: 10000 } );
+                    
+        // Navigate to url
+            await driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
+            // Testing if page loads
+                await driver.getTitle().then(function(title){
+                    console.log(title == "Swagger UI" ? "Verification Successful - Web page for comms-device-registry is displayed.":
+                        "Verification Failed - comms-device-registry failed to load.");
+                        });
 
-                
+        // Navigate to url
+            await driver.get('https://comms-device-registry-old.qa.platform.connectedfleet.io');
+            // Testing if page loads
+                await driver.getTitle().then(function(title){
+                    console.log(title == "Swagger UI" ? "Verification Successful - Web page for comms-device-registry-old is displayed.":
+                        "Verification Failed - comms-device-registry-old failed  to load.");
+                        });
+
+        // Navigate to url
+            await driver.get('https://comms-device-provisioning-service.qa.platform.connectedfleet.io');
+            // Testing if page loads
+                await driver.getTitle().then(function(title){
+                    console.log(title == "Swagger UI" ? "Verification Successful - Web page for comms-device-provisioning-service is displayed.":
+                        "Verification Failed - comms-provisioning-service failed to load.");
+                        });
+
+        // Navigate to url
+            await driver.get('https://delta-comms-transmit-service.qa.platform.connectedfleet.io/#!/device-command-controller');
+            // Testing if page loads
+            await driver.getTitle().then(function (title) {
+                console.log(title == "Swagger UI" ? "Verification Successful - Web page for delta-comms-transmit-service is displayed." :
+                    "Verification Failed - delta-comms-transmit-service web page failed to load.");
+            });
+
+        // Navigate to url
+            await driver.get('https://device-import-service.qa.platform.connectedfleet.io/');
+            // Testing if page loads
+            await driver.getTitle().then(function (title) {
+                console.log(title == "Swagger UI" ? "Verification Successful - Web page for device-import-service is displayed." :
+                    "Verification Failed - device-import-service web page failed to load.");
+            });
+
+            //driver.sleep(190000).then (function() {
+                await driver.close();
+            console.log("All tests complete, please view console for results")
+
+
+                    
+            }());            
 
                   
     // comms-device-registry
   
     
-    driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
+    /*driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
     driver.sleep(15000).then (function() {
         driver.getTitle().then(function(title) {
 
@@ -152,10 +193,7 @@ const driver = new webdriver.Builder()
 
     
 
-    driver.sleep(190000).then (function() {
-        driver.close();
-        console.log("All tests complete, please view console for results")
-    });    
+     
 
     // below code is not working
     /*driver.get('https://comms-device-registry.qa.platform.connectedfleet.io');
